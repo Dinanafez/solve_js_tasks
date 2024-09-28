@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Count Example</title>
+</head>
+<body>
+
+    <h1 id="heading">Text Processing Example</h1>
+    <p id="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vitae ultricies urna. 
+        Curabitur accumsan dolor sit amet justo cursus, at aliquet velit vestibulum. Donec fermentum 
+        justo ac dui tempor, vel viverra sapien pellentesque. Praesent et magna velit. Quisque 
+        condimentum risus vitae nisi dignissim, vel hendrerit odio molestie. Mauris rhoncus orci 
+        vitae ligula placerat, in facilisis velit tempor. Suspendisse potenti. Donec euismod, 
+        tortor a dapibus egestas, leo augue viverra risus, eu pharetra velit sapien vel metus.
+    </p>
+
+    <script>
+
+        // Exercise 04: Count the number of words in the paragraph
+        function countWords() {
+            const paragraph = document.getElementById('paragraph');
+            const paragraphText = paragraph.innerText.trim(); // Get the text and trim spaces
+            const words = paragraphText.split(/\s+/); // Split by one or more whitespaces
+            // words.style.backgroundCcolor="yellow";
+            const wordCount = words.length; // Count the words
+            return wordCount;
+            for(let i=0;i<=wordCount;i++){
+                words.style.backgroundCcolor="yellow";
+            }
+           
+           
+        }
+
+        // Display the word count after the heading
+        function displayWordCount() {
+            const wordCount = countWords();
+            const heading = document.getElementById('heading');
+            const wordCountElement = document.createElement('p'); // Create a new paragraph element
+            wordCountElement.textContent = `Word Count: ${wordCount}`; // Set the word count text
+            heading.after(wordCountElement); // Insert the word count after the heading
+        }
+
+        // Call the function to display word count
+        displayWordCount();
+    </script>
+
+</body>
+</html>
+

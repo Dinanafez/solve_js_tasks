@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="userForm">
+        <!-- Input fields without labels initially -->
+        <input type="text" id="username" name="username" placeholder="Enter username"><br><br>
+        <input type="password" id="password" name="password" placeholder="Enter password"><br><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+ const form = document.getElementById('userForm');
+
+// Create the label for the username
+const usernameLabel = document.createElement('label');
+usernameLabel.setAttribute('for', 'username');
+usernameLabel.textContent = 'Username: ';
+form.insertBefore(usernameLabel, form.children[0]); // Insert before the input field
+
+// Create the label for the password
+const passwordLabel = document.createElement('label');
+passwordLabel.setAttribute('for', 'password');
+passwordLabel.textContent = 'Password: ';
+form.insertBefore(passwordLabel, form.children[2]); // Insert before the input field
+
+// Create the label for the confirm password
+const confirmPasswordLabel = document.createElement('label');
+confirmPasswordLabel.setAttribute('for', 'confirmPassword');
+confirmPasswordLabel.textContent = 'Confirm Password: ';
+form.insertBefore(confirmPasswordLabel, form.children[4]); // Insert before the input field
+    </script>
+</body>
+</html>
